@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Responsive OnePage</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function( ) {
+		$(window).scroll(function( ) {
+			if($(this).scrollTop( ) > 100) {
+				$('.menu-top-fixed').css('margin-top','0px');
+			}else {
+				$('.menu-top-fixed').css('margin-top','-100px');
+			}
+		});
+		$('ul li a').click(function( ) {
+			var direction = $(this).attr("href");
+			scrolling(direction);
+			return false;
+		});
+		
+		function scrolling(value) {
+			if(!value) {
+				$('html, body').animate({scrollTop:0}, 700);
+			}else {
+				var posTop = $(value).offset( ).top;
+				$('html, body').animate({scrollTop:posTop}, 700);
+			}
+		}
+	});
+</script>
+</head>
+
+<body>
+	<header id="home">
+		<!--데스크탑 단말기 영역 냅바: 시작-->
+		<nav class="menu-top hidden-xs"><!--hidden-xs는 모바일 영역에서 보이지 않게 한다.-->
+			<div class="container"><!--부트스트랩의 요소들은 모두 컨테이너 박스로 감싼다.-->
+				<div class="row"><!--그리드 레이아웃은 먼저 행을 분류한다.-->
+                     <!--그리드 레이아웃의 컬럼은 총 12컬럼으로 이루어져 있으며, lg, md, sm, xs로 디바이스를 구분한다.-->
+					<div class="col-lg-3 col-md-3 col-sm-3"><!--로고-->
+						<img src="imgs/logo-small-white.png" alt="로고">
+					</div>
+					<div class="col-lg-4 col-md-3 col-sm-1"></div>
+					<div class="col-lg-5 col-md-6 col-sm-8"><!--메뉴-->
+						<ul>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#freebies">Freebies</a></li>
+							<li><a href="#">Login</a></li>
+							<li><a href="#" class="btn btn-danger">Sign Up</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="menu-top-fixed hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3">
+						<img src="imgs/logo-small-black.png" alt="로고">
+					</div>
+					<div class="col-lg-4 col-md-3 col-sm-1"></div>
+					<div class="col-lg-5 col-md-6 col-sm-8">
+						<ul>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#features">Features</a></li>
+							<li><a href="#freebies">Freebies</a></li>
+							<li><a href="#">Login</a></li>
+							<li><a href="#" class="btn btn-danger">Sign Up</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!--데스크탑 단말기 영역 냅바: 끝-->
+		
+		<!--모바일 단말기 영역 냅바: 시작-->
+		<div class="container hidden-lg hidden-md hidden-sm">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-menu">
+						<span class="sr-only">toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand"><img src="imgs/logo-small-black.png" height="40" alt="로고"></a>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-collapse-menu">
+					<ul class="nav navbar-nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#features">Features</a></li>
+						<li><a href="#freebies">Freebies</a></li>
+						<li><a href="#">Login</a></li>
+						<li><a href="#" class="btn btn-danger">Sign Up</a></li>
+					</ul>
+				</div>         
+			</nav>
+		</div>
+		<!--모바일 단말기 영역 냅바: 끝-->
+		
+		<!--데스크탑 단말기 빅타이포+버튼: 시작-->
+		<div class="container"><!--부트스트랩은 항상 컨테이너로 묶는다.-->
+			<h2>Display your web design</h2>
+			<h3>in a web brower</h3>
+			<p>Fastest way to present your design and get feedback from your clients!</p>
+			<button class="btn btn-primary btn-project">upload project</button>
+			<div class="hd-project">
+				<img src="imgs/drop-icon.png" alt="다운로드">
+				<span class="txt-right">Drop here or Select your project</span>
+				<span>prepared in the PNG or JPG format</span>
+			</div>
+		</div>
+		<!--데스크탑 단말기 빅타이포+버튼: 끝-->
+	</header>
+	
+	<section>
+		<div id="features" class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+					<h3>Fastest way to</h3>
+					<h3>present your design</h3>
+					<p class="cus-txt-margin">Symu is an easy to use tool for web designers. With the help of our system you can present your projects in a browser for free. It is all very easy!</p>
+					<strong>Drop your project anywhere</strong>
+					<p>Symu will prepare a mockup of your website for you!</p>
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+					<img src="imgs/symu-panel-1.png" alt="features">
+				</div>
+			</div>
+		</div>
+		
+		<div id="freebies" class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+					<img src="imgs/symu-panel-2.png" alt="freebies">
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+					<h3>Fastest way to</h3>
+					<h3>present your design</h3>
+					<p class="cus-txt-margin">Symu is an easy to use tool for web designers. With the help of our system you can present your projects in a browser for free. It is all very easy!</p>
+					<strong>Drop your project anywhere</strong>
+					<p>Symu will prepare a mockup of your website for you!</p>
+				</div>
+			</div>
+		</div>
+		
+		<div id="support" class="container">
+			<div class="row">
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+					<h3>Fastest way to</h3>
+					<h3>present your design</h3>
+					<p class="cus-txt-margin">Symu is an easy to use tool for web designers. With the help of our system you can present your projects in a browser for free. It is all very easy!</p>
+					<strong>Drop your project anywhere</strong>
+					<p>Symu will prepare a mockup of your website for you!</p>
+				</div>
+				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+					<img src="imgs/home-panel-3.jpg" alt="support">
+				</div>
+			</div>
+		</div>
+<!--
+		부트스트랩 미디어쿼리 분기점: FHD(lg, 1200px 이상), HD(md, 992px 이상), TB(sm, 768px 이상), SM(xs, 768px 미만)
+		row 박스는 행, col 박스(12열로 구성)는 열을 지정한다.
+-->
+		<div id="bc" class="container">
+			<div class="row">
+				<div class="col-sm-1 col-xs-1"></div>
+				<div class="col-sm-5 col-xs-5">
+					<div class="row">
+						<div class="col-sm-3 col-xs-12 cus-xs-align-center">
+							<img src="imgs/envelope-icon.jpg" alt="메일">
+						</div>
+						<div class="col-sm-9 col-xs-12 cus-xs-align-center">
+							<h4>Email</h4>
+							<h4>notifications</h4>
+						</div>
+					</div>
+					<div class="row ">						
+						<div class="col-sm-12 col-xs-12">
+							<p>An email notification will be sent when your client comments or opens a project. You will know when a client recieves the projects and if he has seen it!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-5 col-xs-5 ">
+					<div class="row">
+						<div class="col-sm-3 col-xs-12 cus-xs-align-center">
+							<img src="imgs/lock-icon.jpg" alt="보안">
+						</div>
+						<div class="col-sm-9 col-xs-12 cus-xs-align-center">
+							<h4>Project</h4>
+							<h4>potection</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<p>Your projects will be perfectly safe, Symu uses SSL encryption and every project added receives a unique link. Additionally you have the option to secure your project with a password.</p>
+						</div>					
+					</div>
+				</div>
+				<div class="col-sm-1 col-xs-1"></div>
+			</div>
+		</div>
+		
+		<div id="info" class="hidden-xs">
+			<div class="row">
+				<div class="col-sm-2 cus-txt-align-center">
+					<h5>253</h5>
+					<p>Todays uploads</p>
+				</div>
+				<div class="col-sm-2 cus-txt-align-center">
+					<h5>17192</h5>
+					<p>Projects uploads</p>
+				</div>
+				<div class="col-sm-4 cus-txt-align-center">
+					<button class="btn btn-danger btn-lg">Sign Up Now</button>
+				</div>
+				<div class="col-sm-2 cus-txt-align-center">
+					<h5>24553</h5>
+					<p>Projects views</p>
+				</div>
+				<div class="col-sm-2 cus-txt-align-center">
+					<h5>56253</h5>
+					<p>Comments posted</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"><img src="imgs/logo-small-white.png" alt="로고"></div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<p>Contact: contact@symu.com</p>
+				</div>
+				<div class="col-lg-1 col-md-1 hidden-sm hidden-xs"></div>
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
